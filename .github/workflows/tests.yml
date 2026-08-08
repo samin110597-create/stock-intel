@@ -1,0 +1,40 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 11 * * 1-5"   # weekday morning sanity run
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      # The offline suite must pass with no API keys present. If it needs a
+      # key to pass, it is testing the vendor, not the code.
+      - run: pytest tests -q
+
+  health:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Provider health check
+        env:
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
+          FMP_KEY: ${{ secrets.FMP_KEY }}
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/health_check.py
