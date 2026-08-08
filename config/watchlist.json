@@ -1,0 +1,14 @@
+{
+  "_comment": "Drives the SCHEDULED job only. Any ticker you type into local/index.html is fetched live and does not need to be listed here.",
+  "stocks": [],
+  "_stocks_note": "Left empty on purpose: the local page covers single tickers on demand. Add symbols here only if you want them precomputed too.",
+  "etfs": ["SMH", "SOXX", "QQQ"],
+  "metals": { "gold": "GLD", "silver": "SLV" },
+  "model": {
+    "_comment": "Walk-forward validation cannot run in a browser, so it stays here. Each symbol adds roughly ten seconds.",
+    "symbols": ["MU", "NVDA"],
+    "horizon_days": 5
+  },
+  "history_start": "2015-01-01",
+  "chart_points": 250
+}
