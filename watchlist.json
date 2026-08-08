@@ -1,0 +1,13 @@
+{
+  "_comment": "Edit this file and push. The next scheduled run picks it up. Everything the site shows is built from this list.",
+  "stocks": ["MU", "SNDK", "NVDA", "AVGO", "MRVL", "QCOM", "AMD", "TSM"],
+  "etfs": ["SMH", "SOXX", "QQQ", "XLK"],
+  "metals": { "gold": "GLD", "silver": "SLV" },
+  "model": {
+    "_comment": "Walk-forward validation runs per symbol and takes roughly 10s each. Keep this list short.",
+    "symbols": ["MU", "NVDA", "SMH"],
+    "horizon_days": 5
+  },
+  "history_start": "2015-01-01",
+  "chart_points": 250
+}

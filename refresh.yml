@@ -1,0 +1,71 @@
+name: refresh site
+
+on:
+  schedule:
+    # 11:10 UTC on weekdays — after the previous US close has settled and
+    # before the next open. Cron in Actions is best-effort; runs can be
+    # delayed by several minutes under load.
+    - cron: "10 11 * * 1-5"
+  workflow_dispatch:        # the "Run workflow" button
+  push:
+    branches: [main]
+    paths:
+      - "config/watchlist.json"   # edit the watchlist, get a rebuild
+      - "mi/**"
+      - "scripts/build_site.py"
+      - "docs/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # The offline suite gates the build. If the logic is broken there is
+      # no point spending API calls, and a broken build must not overwrite
+      # yesterday's good data.
+      - name: Run tests
+        run: pytest tests -q
+
+      - name: Build site data
+        env:
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
+          FMP_KEY: ${{ secrets.FMP_KEY }}
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        # continue-on-error so a partial build still publishes: the site is
+        # then able to show you which section failed and why. The step is
+        # still marked red in the run list.
+        continue-on-error: true
+        run: python scripts/build_site.py
+
+      - name: Check nothing secret is about to be committed
+        run: python scripts/check_no_secrets.py
+
+      - name: Commit data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          if git diff --staged --quiet; then
+            echo "No change in the data — nothing to commit."
+          else
+            git commit -m "data: refresh $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
