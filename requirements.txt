@@ -1,0 +1,24 @@
+# Core
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.4
+requests>=2.31
+
+# Dashboard
+streamlit>=1.36
+
+# Cache format (optional: falls back to pickle if absent)
+pyarrow>=15.0
+
+# Tests
+pytest>=8.0
+
+# Deliberately NOT included, and why:
+#   openbb      - heavy dependency tree, frequent breaking changes, and it
+#                 wraps the same providers this repo already talks to directly.
+#                 It adds a layer between you and the failures you need to see.
+#   torch       - LSTM/Transformer forecasting on ~2000 daily bars overfits.
+#                 If a gradient-boosted model cannot find an edge here, a
+#                 neural net will only find one that isn't there.
+#   ta-lib      - system-level C build for indicators that are 200 lines of
+#                 pandas in mi/indicators.py.

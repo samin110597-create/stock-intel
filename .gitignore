@@ -1,8 +1,4 @@
 .env
-
-# Your provider keys for the local page. Never commit this.
-local/keys.js
-
 __pycache__/
 *.pyc
 data/cache/*
