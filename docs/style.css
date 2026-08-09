@@ -1,0 +1,439 @@
+/* ---------------------------------------------------------------
+   Stock Intelligence — visual system
+
+   The subject here is provenance: where a number came from, when it
+   was true, and whether it can be trusted. So the page is built like
+   an archival record sheet rather than a finance product. Data is set
+   in mono throughout; prose is the minority voice. Every figure can
+   carry a stamp naming its source.
+   --------------------------------------------------------------- */
+
+:root{
+  --paper:      #E8EBEE;
+  --panel:      #FFFFFF;
+  --ink:        #131A22;
+  --muted:      #5C6B7A;
+  --rule:       #C4CCD4;
+  --accent:     #1B3A5C;
+  --verified:   #2F6B58;
+  --withheld:   #9A6B1F;
+  --failed:     #8C3A2B;
+
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Archivo", system-ui, -apple-system, sans-serif;
+
+  --gap: 24px;
+}
+
+*{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.55;
+  padding:0 20px 80px;
+}
+
+/* --- record header ------------------------------------------------ */
+.record{
+  max-width:1080px;
+  margin:0 auto;
+  padding:36px 0 24px;
+}
+
+.record-strip{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:6px 14px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--rule);
+}
+
+.stamp-label{
+  font-family:var(--mono);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.stamp-value{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--ink);
+  margin-right:8px;
+}
+
+.record h1{
+  font-size:clamp(30px,5.5vw,46px);
+  font-weight:700;
+  letter-spacing:-.025em;
+  margin:26px 0 4px;
+}
+
+/* The page opens on whether the data can be trusted, not on a price.
+   That ordering is the whole argument of the project. */
+.trust{
+  border-left:3px solid var(--accent);
+  padding:2px 0 2px 16px;
+  margin-top:20px;
+}
+
+.trust-verdict{
+  font-family:var(--mono);
+  font-size:clamp(15px,2.6vw,20px);
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+
+.trust-detail{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:4px;
+  max-width:62ch;
+}
+
+.trust.is-degraded{ border-left-color:var(--withheld); }
+.trust.is-failed{ border-left-color:var(--failed); }
+
+/* --- sheet tabs --------------------------------------------------- */
+.sheets{
+  max-width:1080px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  border-bottom:1px solid var(--rule);
+  margin-top:30px;
+}
+
+.sheets button{
+  appearance:none;
+  background:none;
+  border:0;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+  padding:12px 18px 11px 0;
+  margin-right:22px;
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--muted);
+  cursor:pointer;
+}
+
+.sheets button:hover{ color:var(--ink); }
+.sheets button[aria-selected="true"]{
+  color:var(--accent);
+  border-bottom-color:var(--accent);
+}
+.sheets button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+/* --- sheets ------------------------------------------------------- */
+main{ max-width:1080px; margin:0 auto; }
+
+.sheet{ padding-top:30px; }
+.sheet[hidden]{ display:none; }
+
+@media (prefers-reduced-motion:no-preference){
+  .sheet:not([hidden]){ animation:rise .28s ease-out both; }
+  @keyframes rise{ from{ opacity:0; transform:translateY(5px);} to{ opacity:1; transform:none;} }
+}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:34px 0 12px;
+}
+.sheet > .eyebrow:first-child{ margin-top:0; }
+
+.note{
+  color:var(--muted);
+  font-size:14px;
+  max-width:70ch;
+  margin:0 0 16px;
+}
+
+/* --- card --------------------------------------------------------- */
+.card{
+  background:var(--panel);
+  border:1px solid var(--rule);
+  padding:20px 22px;
+  margin-bottom:14px;
+}
+
+.card-head{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:12px;
+  margin-bottom:14px;
+}
+
+.ticker{
+  font-family:var(--mono);
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+
+.price{ font-family:var(--mono); font-size:20px; }
+.delta{ font-family:var(--mono); font-size:13px; margin-left:8px; }
+.up{ color:var(--verified); }
+.down{ color:var(--failed); }
+
+/* Signature element: the provenance stamp. Attached to every figure
+   that came from outside this repo. */
+.pstamp{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid var(--rule);
+  padding:2px 8px;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.pstamp b{ color:var(--accent); font-weight:600; }
+
+/* --- figure grid -------------------------------------------------- */
+.figures{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+
+.figure{ background:var(--panel); padding:11px 13px; }
+
+.figure dt{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.figure dd{
+  font-family:var(--mono);
+  font-size:17px;
+  margin:3px 0 0;
+}
+
+.figure dd.absent{ color:var(--muted); font-size:13px; }
+
+/* --- tables ------------------------------------------------------- */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-family:var(--mono);
+  font-size:12.5px;
+}
+
+th,td{
+  text-align:left;
+  padding:7px 10px;
+  border-bottom:1px solid var(--rule);
+  white-space:nowrap;
+}
+
+th{
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+}
+
+tbody tr:last-child td{ border-bottom:0; }
+td.num,th.num{ text-align:right; }
+
+.scroll{ overflow-x:auto; }
+
+/* --- status words ------------------------------------------------- */
+.tag{
+  font-family:var(--mono);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:2px 7px;
+  border:1px solid currentColor;
+}
+.tag.ok{ color:var(--verified); }
+.tag.warn{ color:var(--withheld); }
+.tag.bad{ color:var(--failed); }
+
+/* --- failure panel ------------------------------------------------ */
+.failure{
+  background:var(--panel);
+  border:1px solid var(--failed);
+  border-left-width:3px;
+  padding:16px 18px;
+  margin-bottom:14px;
+}
+
+.failure h3{
+  margin:0 0 6px;
+  font-size:15px;
+  font-weight:600;
+}
+
+.failure p{ margin:0 0 8px; color:var(--muted); font-size:14px; max-width:70ch; }
+
+.failure pre{
+  font-family:var(--mono);
+  font-size:11.5px;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  padding:10px 12px;
+  margin:0;
+  overflow-x:auto;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+
+/* --- verdict block ------------------------------------------------ */
+.verdict{
+  border:1px solid var(--rule);
+  background:var(--panel);
+  padding:20px 22px;
+  margin-bottom:14px;
+}
+
+.verdict-line{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+.verdict-status{
+  font-family:var(--mono);
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+
+.verdict-status.qualified{ color:var(--verified); }
+.verdict-status.withheld{ color:var(--withheld); }
+.verdict-status.error{ color:var(--failed); }
+
+.reasons{
+  list-style:none;
+  padding:0;
+  margin:10px 0 0;
+  font-size:13.5px;
+  color:var(--muted);
+  max-width:74ch;
+}
+
+.reasons li{
+  padding-left:16px;
+  position:relative;
+  margin-bottom:5px;
+}
+
+.reasons li::before{
+  content:"—";
+  position:absolute;
+  left:0;
+  color:var(--withheld);
+}
+
+.prob{
+  font-family:var(--mono);
+  font-size:34px;
+  font-weight:600;
+  letter-spacing:-.02em;
+  color:var(--verified);
+}
+
+/* --- events ------------------------------------------------------- */
+.events{
+  list-style:none;
+  padding:0;
+  margin:14px 0 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.events li{
+  font-family:var(--mono);
+  font-size:11px;
+  border:1px solid var(--rule);
+  padding:3px 9px;
+  color:var(--ink);
+}
+
+.events time{ color:var(--muted); margin-left:6px; }
+
+/* --- chart -------------------------------------------------------- */
+.chart{ margin:16px 0 4px; }
+.chart svg{ display:block; width:100%; height:auto; }
+.legend{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:6px;
+}
+.legend span::before{
+  content:"";
+  display:inline-block;
+  width:14px;
+  height:2px;
+  vertical-align:middle;
+  margin-right:6px;
+  background:currentColor;
+}
+.legend .l-close{ color:var(--accent); }
+.legend .l-ema{ color:var(--withheld); }
+.legend .l-sma{ color:var(--muted); }
+
+/* --- heat cells --------------------------------------------------- */
+td.heat{ text-align:right; }
+
+/* --- footer ------------------------------------------------------- */
+footer{
+  max-width:1080px;
+  margin:60px auto 0;
+  padding-top:20px;
+  border-top:1px solid var(--rule);
+  color:var(--muted);
+  font-size:13.5px;
+}
+footer p{ max-width:78ch; margin:0 0 8px; }
+footer .fine{ font-family:var(--mono); font-size:11px; }
+
+@media (max-width:640px){
+  body{ padding:0 14px 60px; }
+  .card{ padding:16px; }
+  .sheets button{ margin-right:14px; padding-right:0; }
+}

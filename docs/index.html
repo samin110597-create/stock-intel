@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock Intelligence — data record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="record">
+  <div class="record-strip">
+    <span class="stamp-label">Record</span>
+    <span id="rec-run" class="stamp-value">—</span>
+    <span class="stamp-label">Built</span>
+    <span id="rec-built" class="stamp-value">—</span>
+    <span class="stamp-label">Commit</span>
+    <span id="rec-commit" class="stamp-value">—</span>
+  </div>
+
+  <h1>Stock Intelligence</h1>
+
+  <div id="trust" class="trust">
+    <div class="trust-verdict" id="trust-verdict">Loading record…</div>
+    <div class="trust-detail" id="trust-detail"></div>
+  </div>
+</header>
+
+<nav class="sheets" id="tabs" role="tablist"></nav>
+
+<main id="main">
+  <section class="sheet" id="sheet-health" role="tabpanel"></section>
+  <section class="sheet" id="sheet-stocks" role="tabpanel" hidden></section>
+  <section class="sheet" id="sheet-macro" role="tabpanel" hidden></section>
+  <section class="sheet" id="sheet-model" role="tabpanel" hidden></section>
+  <section class="sheet" id="sheet-etf" role="tabpanel" hidden></section>
+</main>
+
+<footer>
+  <p>Every figure carries the provider that supplied it and the date it describes. Where a
+  figure is absent, the record says which provider failed and why — nothing is estimated,
+  filled forward, or substituted.</p>
+  <p class="fine">Rebuilt by a scheduled job. Not investment advice, and not a trading system:
+  no position sizing, no risk management, no execution.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
