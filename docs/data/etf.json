@@ -5,9 +5,9 @@
   "QQQ"
  ],
  "failures": {
-  "SMH": "[FAIL] fmp (344ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/SMH?apikey=[REDACTED]",
-  "SOXX": "[FAIL] fmp (293ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/SOXX?apikey=[REDACTED]",
-  "QQQ": "[FAIL] fmp (337ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/QQQ?apikey=[REDACTED]"
+  "SMH": "[FAIL] fmp (307ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/SMH?apikey=[REDACTED]",
+  "SOXX": "[FAIL] fmp (334ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/SOXX?apikey=[REDACTED]",
+  "QQQ": "[FAIL] fmp (317ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/QQQ?apikey=[REDACTED]"
  },
  "notes": [],
  "concentration": [],
