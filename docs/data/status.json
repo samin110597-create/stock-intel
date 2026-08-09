@@ -1,0 +1,1504 @@
+{
+ "built_at": "2026-08-09 01:38 UTC",
+ "run_id": "16",
+ "commit": "68bfc51",
+ "providers_live": [],
+ "providers_missing_key": [
+  "twelvedata",
+  "polygon",
+  "fmp",
+  "finnhub",
+  "alphavantage",
+  "fred"
+ ],
+ "sections": {
+  "stocks": {
+   "ok": true,
+   "error": null
+  },
+  "macro": {
+   "ok": false,
+   "error": "DataUnavailable: No provider could satisfy: macro:catalog\n  (no providers configured)"
+  },
+  "models": {
+   "ok": true,
+   "error": null
+  },
+  "etf": {
+   "ok": true,
+   "error": null
+  }
+ },
+ "attempts": [
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII10:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DGS10:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10YIE:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFII5:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DTWEXBGS:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DEXCAUS:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:DFF:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPIAUCSL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:CPILFESL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:PPIACO:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:M2SL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:UNRATE:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:T10Y2Y:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:BAMLH0A0HYM2:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "macro:WALCL:2015-01-01",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:MU:2015-01-01:2026-08-09",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:MU:2015-01-01:2026-08-09",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:MU:2015-01-01:2026-08-09",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:MU:2015-01-01:2026-08-09",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:MU:2015-01-01:2026-08-09",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:MU:2015-01-01:2026-08-09",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-09",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-09",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-09",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-09",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-09",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-09",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SMH",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SMH",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SMH",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SMH",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SMH",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SMH",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SOXX",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SOXX",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SOXX",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SOXX",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SOXX",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:SOXX",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:QQQ",
+   "provider": "twelvedata",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:QQQ",
+   "provider": "polygon",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:QQQ",
+   "provider": "fmp",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:QQQ",
+   "provider": "finnhub",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:QQQ",
+   "provider": "alphavantage",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  },
+  {
+   "request": "holdings:QQQ",
+   "provider": "fred",
+   "ok": false,
+   "ms": 0,
+   "detail": "no API key configured"
+  }
+ ]
+}

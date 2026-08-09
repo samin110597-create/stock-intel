@@ -1,0 +1,21 @@
+{
+ "models": {
+  "MU": {
+   "status": "ERROR",
+   "reasons": [
+    "DataUnavailable: No provider could satisfy: ohlcv:MU:2015-01-01:2026-08-09\n  [FAIL] twelvedata (0ms): no API key configured\n  [FAIL] polygon (0ms): no API key configured\n  [FAIL] fmp (0ms): no API key configured\n  [FAIL] finnhub (0ms): no API key configured\n  [FAIL] alphavantage (0ms): no API key configured\n  [FAIL] fred (0ms): no API key configured"
+   ],
+   "scorecard": {},
+   "probability": null
+  },
+  "NVDA": {
+   "status": "ERROR",
+   "reasons": [
+    "DataUnavailable: No provider could satisfy: ohlcv:NVDA:2015-01-01:2026-08-09\n  [FAIL] twelvedata (0ms): no API key configured\n  [FAIL] polygon (0ms): no API key configured\n  [FAIL] fmp (0ms): no API key configured\n  [FAIL] finnhub (0ms): no API key configured\n  [FAIL] alphavantage (0ms): no API key configured\n  [FAIL] fred (0ms): no API key configured"
+   ],
+   "scorecard": {},
+   "probability": null
+  }
+ },
+ "trained_with_macro": false
+}

@@ -1,0 +1,17 @@
+{
+ "requested": [
+  "SMH",
+  "SOXX",
+  "QQQ"
+ ],
+ "failures": {
+  "SMH": "[FAIL] fred (0ms): no API key configured",
+  "SOXX": "[FAIL] fred (0ms): no API key configured",
+  "QQQ": "[FAIL] fred (0ms): no API key configured"
+ },
+ "notes": [],
+ "concentration": [],
+ "overlap_weight": null,
+ "overlap_names": null,
+ "look_through": []
+}
