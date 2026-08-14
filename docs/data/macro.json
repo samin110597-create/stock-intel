@@ -9,10 +9,10 @@
   "credit_stress": 0
  },
  "detail": {
-  "real_yield_chg_60d_bp": 43.0,
-  "breakeven_chg_60d_bp": -23.0,
+  "real_yield_chg_60d_bp": 32.0,
+  "breakeven_chg_60d_bp": -24.0,
   "dxy_chg_60d_pct": 0.46,
-  "hy_oas_chg_60d_bp": -8.0
+  "hy_oas_chg_60d_bp": -7.0
  },
  "missing": [],
  "freshness": [
@@ -20,7 +20,7 @@
    "series": "breakeven_10y",
    "fred_id": "T10YIE",
    "freq": "D",
-   "last_obs": "2026-08-12T00:00:00.000",
+   "last_obs": "2026-08-13T00:00:00.000",
    "age_days": 1,
    "tolerance_days": 6,
    "status": "ok"
@@ -30,7 +30,7 @@
    "fred_id": "CPILFESL",
    "freq": "M",
    "last_obs": "2026-07-01T00:00:00.000",
-   "age_days": 43,
+   "age_days": 44,
    "tolerance_days": 50,
    "status": "ok"
   },
@@ -39,7 +39,7 @@
    "fred_id": "CPIAUCSL",
    "freq": "M",
    "last_obs": "2026-07-01T00:00:00.000",
-   "age_days": 43,
+   "age_days": 44,
    "tolerance_days": 50,
    "status": "ok"
   },
@@ -48,7 +48,7 @@
    "fred_id": "DTWEXBGS",
    "freq": "D",
    "last_obs": "2026-08-07T00:00:00.000",
-   "age_days": 6,
+   "age_days": 7,
    "tolerance_days": 12,
    "status": "ok"
   },
@@ -56,8 +56,8 @@
    "series": "fed_balance",
    "fred_id": "WALCL",
    "freq": "W",
-   "last_obs": "2026-08-05T00:00:00.000",
-   "age_days": 8,
+   "last_obs": "2026-08-12T00:00:00.000",
+   "age_days": 2,
    "tolerance_days": 14,
    "status": "ok"
   },
@@ -65,7 +65,7 @@
    "series": "fed_funds",
    "fred_id": "DFF",
    "freq": "D",
-   "last_obs": "2026-08-11T00:00:00.000",
+   "last_obs": "2026-08-12T00:00:00.000",
    "age_days": 2,
    "tolerance_days": 6,
    "status": "ok"
@@ -74,7 +74,7 @@
    "series": "hy_spread",
    "fred_id": "BAMLH0A0HYM2",
    "freq": "D",
-   "last_obs": "2026-08-11T00:00:00.000",
+   "last_obs": "2026-08-12T00:00:00.000",
    "age_days": 2,
    "tolerance_days": 8,
    "status": "ok"
@@ -83,16 +83,25 @@
    "series": "nominal_10y",
    "fred_id": "DGS10",
    "freq": "D",
-   "last_obs": "2026-08-11T00:00:00.000",
+   "last_obs": "2026-08-12T00:00:00.000",
    "age_days": 2,
    "tolerance_days": 6,
+   "status": "ok"
+  },
+  {
+   "series": "ppi",
+   "fred_id": "PPIACO",
+   "freq": "M",
+   "last_obs": "2026-07-01T00:00:00.000",
+   "age_days": 44,
+   "tolerance_days": 55,
    "status": "ok"
   },
   {
    "series": "real_yield_10y",
    "fred_id": "DFII10",
    "freq": "D",
-   "last_obs": "2026-08-11T00:00:00.000",
+   "last_obs": "2026-08-12T00:00:00.000",
    "age_days": 2,
    "tolerance_days": 6,
    "status": "ok"
@@ -101,7 +110,7 @@
    "series": "real_yield_5y",
    "fred_id": "DFII5",
    "freq": "D",
-   "last_obs": "2026-08-11T00:00:00.000",
+   "last_obs": "2026-08-12T00:00:00.000",
    "age_days": 2,
    "tolerance_days": 6,
    "status": "ok"
@@ -111,7 +120,7 @@
    "fred_id": "UNRATE",
    "freq": "M",
    "last_obs": "2026-07-01T00:00:00.000",
-   "age_days": 43,
+   "age_days": 44,
    "tolerance_days": 45,
    "status": "ok"
   },
@@ -120,7 +129,7 @@
    "fred_id": "DEXCAUS",
    "freq": "D",
    "last_obs": "2026-08-07T00:00:00.000",
-   "age_days": 6,
+   "age_days": 7,
    "tolerance_days": 12,
    "status": "ok"
   },
@@ -128,7 +137,7 @@
    "series": "yield_curve",
    "fred_id": "T10Y2Y",
    "freq": "D",
-   "last_obs": "2026-08-12T00:00:00.000",
+   "last_obs": "2026-08-13T00:00:00.000",
    "age_days": 1,
    "tolerance_days": 6,
    "status": "ok"
@@ -138,26 +147,13 @@
    "fred_id": "M2SL",
    "freq": "M",
    "last_obs": "2026-06-01T00:00:00.000",
-   "age_days": 73,
+   "age_days": 74,
    "tolerance_days": 65,
-   "status": "STALE"
-  },
-  {
-   "series": "ppi",
-   "fred_id": "PPIACO",
-   "freq": "M",
-   "last_obs": "2026-06-01T00:00:00.000",
-   "age_days": 73,
-   "tolerance_days": 55,
    "status": "STALE"
   }
  ],
  "series": {
   "real_yield_10y": [
-   [
-    "2025-08-12",
-    1.91
-   ],
    [
     "2025-08-13",
     1.87
@@ -1153,6 +1149,10 @@
    [
     "2026-08-11",
     2.43
+   ],
+   [
+    "2026-08-12",
+    2.42
    ]
   ],
   "dxy_broad": [
@@ -2159,10 +2159,6 @@
   ],
   "breakeven_10y": [
    [
-    "2025-08-13",
-    2.37
-   ],
-   [
     "2025-08-14",
     2.39
    ],
@@ -3157,13 +3153,13 @@
    [
     "2026-08-12",
     2.26
+   ],
+   [
+    "2026-08-13",
+    2.24
    ]
   ],
   "hy_spread": [
-   [
-    "2025-08-31",
-    2.84
-   ],
    [
     "2025-09-01",
     2.84
@@ -4159,9 +4155,13 @@
    [
     "2026-08-11",
     2.72
+   ],
+   [
+    "2026-08-12",
+    2.71
    ]
   ]
  },
  "metals": null,
- "metals_error": "DataUnavailable: No provider could satisfy: ohlcv:XAG/USD:2015-01-01:2026-08-13\n  [FAIL] twelvedata (75ms): HTTPError: 404 Client Error: Not Found for url: https://api.twelvedata.com/time_series?symbol=XAG%2FUSD&interval=1day&start_date=2015-01-01&end_date=2026-08-13&outputsize=5000&apikey=[REDACTED]\n  [FAIL] polygon (111ms): HTTPError: 404 Client Error: Not Found for url: https://api.polygon.io/v2/aggs/ticker/XAG/USD/range/1/day/2015-01-01/2026-08-13?adjusted=true&sort=asc&limit=50000&apiKey=[REDACTED]\n  [FAIL] fmp (260ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/historical-price-full/XAG/USD?from=2015-01-01&to=2026-08-13&apikey=[REDACTED]\n  [FAIL] finnhub (277ms): HTTPError: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=XAG%2FUSD&resolution=D&from=1420070400&to=1786579200&token=[REDACTED]\n  [FAIL] alphavantage (142ms): RuntimeError: alphavantage: Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints"
+ "metals_error": "DataUnavailable: No provider could satisfy: ohlcv:XAG/USD:2015-01-01:2026-08-14\n  [FAIL] twelvedata (41ms): HTTPError: 404 Client Error: Not Found for url: https://api.twelvedata.com/time_series?symbol=XAG%2FUSD&interval=1day&start_date=2015-01-01&end_date=2026-08-14&outputsize=5000&apikey=[REDACTED]\n  [FAIL] polygon (114ms): HTTPError: 404 Client Error: Not Found for url: https://api.polygon.io/v2/aggs/ticker/XAG/USD/range/1/day/2015-01-01/2026-08-14?adjusted=true&sort=asc&limit=50000&apiKey=[REDACTED]\n  [FAIL] fmp (42ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/historical-price-full/XAG/USD?from=2015-01-01&to=2026-08-14&apikey=[REDACTED]\n  [FAIL] finnhub (66ms): HTTPError: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=XAG%2FUSD&resolution=D&from=1420070400&to=1786665600&token=[REDACTED]\n  [FAIL] alphavantage (44ms): RuntimeError: alphavantage: Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints"
 }
