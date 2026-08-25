@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-24 11:39 UTC",
- "run_id": "31",
- "commit": "cf67671",
+ "built_at": "2026-08-25 11:38 UTC",
+ "run_id": "32",
+ "commit": "c8f1e70",
  "providers_live": [
   "twelvedata",
   "polygon",
@@ -34,246 +34,246 @@
    "request": "macro:DFII10:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 394,
-   "detail": "2910 rows"
+   "ms": 185,
+   "detail": "2911 rows"
   },
   {
    "request": "macro:DGS10:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 206,
-   "detail": "2910 rows"
+   "ms": 179,
+   "detail": "2911 rows"
   },
   {
    "request": "macro:T10YIE:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 224,
-   "detail": "2911 rows"
+   "ms": 173,
+   "detail": "2912 rows"
   },
   {
    "request": "macro:DFII5:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 253,
-   "detail": "2910 rows"
+   "ms": 770,
+   "detail": "2911 rows"
   },
   {
    "request": "macro:DTWEXBGS:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 203,
-   "detail": "2897 rows"
+   "ms": 187,
+   "detail": "2902 rows"
   },
   {
    "request": "macro:DEXCAUS:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 201,
-   "detail": "2904 rows"
+   "ms": 206,
+   "detail": "2909 rows"
   },
   {
    "request": "macro:DFF:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 253,
-   "detail": "4250 rows"
+   "ms": 162,
+   "detail": "4251 rows"
   },
   {
    "request": "macro:CPIAUCSL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 183,
+   "ms": 167,
    "detail": "138 rows"
   },
   {
    "request": "macro:CPILFESL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 377,
+   "ms": 193,
    "detail": "138 rows"
   },
   {
    "request": "macro:PPIACO:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 207,
+   "ms": 225,
    "detail": "139 rows"
   },
   {
    "request": "macro:M2SL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 177,
+   "ms": 149,
    "detail": "138 rows"
   },
   {
    "request": "macro:UNRATE:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 166,
+   "ms": 157,
    "detail": "138 rows"
   },
   {
    "request": "macro:T10Y2Y:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 305,
-   "detail": "2911 rows"
+   "ms": 192,
+   "detail": "2912 rows"
   },
   {
    "request": "macro:BAMLH0A0HYM2:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 182,
-   "detail": "787 rows"
+   "ms": 173,
+   "detail": "785 rows"
   },
   {
    "request": "macro:WALCL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 171,
+   "ms": 175,
    "detail": "607 rows"
   },
   {
-   "request": "ohlcv:XAU/USD:2015-01-01:2026-08-24",
+   "request": "ohlcv:XAU/USD:2015-01-01:2026-08-25",
    "provider": "twelvedata",
    "ok": true,
-   "ms": 914,
-   "detail": "3178 rows"
+   "ms": 1114,
+   "detail": "3179 rows"
   },
   {
-   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-24",
+   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-25",
    "provider": "twelvedata",
    "ok": false,
-   "ms": 133,
-   "detail": "HTTPError: 404 Client Error: Not Found for url: https://api.twelvedata.com/time_series?symbol=XAG%2FUSD&interval=1day&start_date=2015-01-01&end_date=2026-08-24&outputsize=5000&apikey=[REDACTED]"
+   "ms": 123,
+   "detail": "HTTPError: 404 Client Error: Not Found for url: https://api.twelvedata.com/time_series?symbol=XAG%2FUSD&interval=1day&start_date=2015-01-01&end_date=2026-08-25&outputsize=5000&apikey=[REDACTED]"
   },
   {
-   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-24",
+   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-25",
    "provider": "polygon",
    "ok": false,
-   "ms": 234,
-   "detail": "HTTPError: 404 Client Error: Not Found for url: https://api.polygon.io/v2/aggs/ticker/XAG/USD/range/1/day/2015-01-01/2026-08-24?adjusted=true&sort=asc&limit=50000&apiKey=[REDACTED]"
+   "ms": 376,
+   "detail": "HTTPError: 404 Client Error: Not Found for url: https://api.polygon.io/v2/aggs/ticker/XAG/USD/range/1/day/2015-01-01/2026-08-25?adjusted=true&sort=asc&limit=50000&apiKey=[REDACTED]"
   },
   {
-   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-24",
+   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-25",
    "provider": "fmp",
    "ok": false,
-   "ms": 317,
-   "detail": "HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/historical-price-full/XAG/USD?from=2015-01-01&to=2026-08-24&apikey=[REDACTED]"
+   "ms": 307,
+   "detail": "HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/historical-price-full/XAG/USD?from=2015-01-01&to=2026-08-25&apikey=[REDACTED]"
   },
   {
-   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-24",
+   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-25",
    "provider": "finnhub",
    "ok": false,
-   "ms": 359,
-   "detail": "HTTPError: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=XAG%2FUSD&resolution=D&from=1420070400&to=1787529600&token=[REDACTED]"
+   "ms": 131,
+   "detail": "HTTPError: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=XAG%2FUSD&resolution=D&from=1420070400&to=1787616000&token=[REDACTED]"
   },
   {
-   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-24",
+   "request": "ohlcv:XAG/USD:2015-01-01:2026-08-25",
    "provider": "alphavantage",
    "ok": false,
-   "ms": 104,
+   "ms": 100,
    "detail": "RuntimeError: alphavantage: Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints"
   },
   {
    "request": "macro:DFII10:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 155,
-   "detail": "2910 rows"
+   "ms": 184,
+   "detail": "2911 rows"
   },
   {
    "request": "macro:DGS10:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 190,
-   "detail": "2910 rows"
+   "ms": 189,
+   "detail": "2911 rows"
   },
   {
    "request": "macro:T10YIE:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 155,
-   "detail": "2911 rows"
+   "ms": 197,
+   "detail": "2912 rows"
   },
   {
    "request": "macro:DFII5:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 208,
-   "detail": "2910 rows"
+   "ms": 195,
+   "detail": "2911 rows"
   },
   {
    "request": "macro:DTWEXBGS:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 150,
-   "detail": "2897 rows"
+   "ms": 155,
+   "detail": "2902 rows"
   },
   {
    "request": "macro:DEXCAUS:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 168,
-   "detail": "2904 rows"
+   "ms": 196,
+   "detail": "2909 rows"
   },
   {
    "request": "macro:DFF:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 182,
-   "detail": "4250 rows"
+   "ms": 189,
+   "detail": "4251 rows"
   },
   {
    "request": "macro:CPIAUCSL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 205,
+   "ms": 157,
    "detail": "138 rows"
   },
   {
    "request": "macro:CPILFESL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 163,
+   "ms": 162,
    "detail": "138 rows"
   },
   {
    "request": "macro:PPIACO:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 218,
+   "ms": 153,
    "detail": "139 rows"
   },
   {
    "request": "macro:M2SL:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 164,
+   "ms": 160,
    "detail": "138 rows"
   },
   {
    "request": "macro:UNRATE:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 230,
+   "ms": 148,
    "detail": "138 rows"
   },
   {
    "request": "macro:T10Y2Y:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 172,
-   "detail": "2911 rows"
+   "ms": 214,
+   "detail": "2912 rows"
   },
   {
    "request": "macro:BAMLH0A0HYM2:2015-01-01",
    "provider": "fred",
    "ok": true,
-   "ms": 179,
-   "detail": "787 rows"
+   "ms": 211,
+   "detail": "785 rows"
   },
   {
    "request": "macro:WALCL:2015-01-01",
@@ -283,38 +283,38 @@
    "detail": "607 rows"
   },
   {
-   "request": "ohlcv:MU:2015-01-01:2026-08-24",
+   "request": "ohlcv:MU:2015-01-01:2026-08-25",
    "provider": "twelvedata",
    "ok": true,
-   "ms": 450,
-   "detail": "2926 rows"
+   "ms": 438,
+   "detail": "2927 rows"
   },
   {
-   "request": "ohlcv:NVDA:2015-01-01:2026-08-24",
+   "request": "ohlcv:NVDA:2015-01-01:2026-08-25",
    "provider": "twelvedata",
    "ok": true,
-   "ms": 493,
-   "detail": "2926 rows"
+   "ms": 1941,
+   "detail": "2927 rows"
   },
   {
    "request": "holdings:SMH",
    "provider": "fmp",
    "ok": false,
-   "ms": 308,
+   "ms": 315,
    "detail": "HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/SMH?apikey=[REDACTED]"
   },
   {
    "request": "holdings:SOXX",
    "provider": "fmp",
    "ok": false,
-   "ms": 428,
+   "ms": 424,
    "detail": "HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/SOXX?apikey=[REDACTED]"
   },
   {
    "request": "holdings:QQQ",
    "provider": "fmp",
    "ok": false,
-   "ms": 365,
+   "ms": 328,
    "detail": "HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/etf-holder/QQQ?apikey=[REDACTED]"
   }
  ]
