@@ -4,16 +4,16 @@
    "status": "NOT QUALIFIED",
    "horizon_days": 5,
    "reasons": [
-    "Brier skill -0.0631 < 0.005 (no better than predicting the base rate)",
+    "Brier skill -0.0626 < 0.005 (no better than predicting the base rate)",
     "skill positive in only 3/6 folds (unstable across time, likely one lucky regime)",
     "permutation p=0.859 > 0.05 (skill indistinguishable from noise)"
    ],
    "scorecard": {
-    "Out-of-sample rows": 476,
-    "Base rate": 0.6113,
-    "Brier score": 0.26341,
-    "Brier skill": -0.06309,
-    "Log loss": 0.72195,
+    "Out-of-sample rows": 477,
+    "Base rate": 0.6122,
+    "Brier score": 0.26325,
+    "Brier skill": -0.06264,
+    "Log loss": 0.72164,
     "Permutation p-value": 0.8591,
     "Folds with positive skill": "3 of 6"
    },
@@ -56,10 +56,10 @@
     },
     {
      "bin": "0.5-0.6",
-     "n": 184,
-     "predicted": 0.5503,
-     "observed": 0.5924,
-     "gap": -0.0421
+     "n": 185,
+     "predicted": 0.5504,
+     "observed": 0.5946,
+     "gap": -0.0442
     },
     {
      "bin": "0.6-0.7",
@@ -113,13 +113,13 @@
      "observed": 0.6842
     },
     {
-     "decile": 7,
-     "n": 84,
+     "decile": 8,
+     "n": 85,
      "pred": 0.5624,
-     "observed": 0.5
+     "observed": 0.5059
     },
     {
-     "decile": 8,
+     "decile": 9,
      "n": 11,
      "pred": 0.6746,
      "observed": 0.5455
@@ -128,11 +128,117 @@
    "probability": null
   },
   "NVDA": {
-   "status": "ERROR",
+   "status": "NOT QUALIFIED",
+   "horizon_days": 5,
    "reasons": [
-    "DataUnavailable: No provider could satisfy: ohlcv:NVDA:2015-01-01:2026-09-02\n  [FAIL] twelvedata (20674ms): ConnectionError: HTTPSConnectionPool(host='api.twelvedata.com', port=443): Read timed out.\n  [FAIL] polygon (4284ms): HTTPError: 502 Server Error: Bad Gateway for url: https://api.polygon.io/v2/aggs/ticker/NVDA/range/1/day/2015-01-01/2026-09-02?adjusted=true&sort=asc&limit=50000&apiKey=[REDACTED]\n  [FAIL] fmp (86ms): HTTPError: 403 Client Error: Forbidden for url: https://financialmodelingprep.com/api/v3/historical-price-full/NVDA?from=2015-01-01&to=2026-09-02&apikey=[REDACTED]\n  [FAIL] finnhub (600ms): HTTPError: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=NVDA&resolution=D&from=1420070400&to=1788307200&token=[REDACTED]\n  [FAIL] alphavantage (378ms): RuntimeError: alphavantage: Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints"
+    "Brier skill -0.0134 < 0.005 (no better than predicting the base rate)",
+    "skill positive in only 3/6 folds (unstable across time, likely one lucky regime)",
+    "permutation p=0.515 > 0.05 (skill indistinguishable from noise)"
    ],
-   "scorecard": {},
+   "scorecard": {
+    "Out-of-sample rows": 477,
+    "Base rate": 0.5472,
+    "Brier score": 0.25277,
+    "Brier skill": -0.01342,
+    "Log loss": 0.6999,
+    "Permutation p-value": 0.5147,
+    "Folds with positive skill": "3 of 6"
+   },
+   "fold_skill": [
+    0.0027,
+    0.0077,
+    -0.0026,
+    -0.0001,
+    0.0165,
+    -0.0639
+   ],
+   "reliability": [
+    {
+     "bin": "0.4-0.5",
+     "n": 16,
+     "predicted": 0.4886,
+     "observed": 0.5,
+     "gap": -0.0114
+    },
+    {
+     "bin": "0.5-0.6",
+     "n": 313,
+     "predicted": 0.5661,
+     "observed": 0.5655,
+     "gap": 0.0006
+    },
+    {
+     "bin": "0.6-0.7",
+     "n": 112,
+     "predicted": 0.6283,
+     "observed": 0.4732,
+     "gap": 0.155
+    },
+    {
+     "bin": "0.7-0.8",
+     "n": 28,
+     "predicted": 0.7147,
+     "observed": 0.6786,
+     "gap": 0.0362
+    },
+    {
+     "bin": "0.8-0.9",
+     "n": 8,
+     "predicted": 0.8128,
+     "observed": 0.5,
+     "gap": 0.3128
+    }
+   ],
+   "deciles": [
+    {
+     "decile": 0,
+     "n": 76,
+     "pred": 0.5211,
+     "observed": 0.5132
+    },
+    {
+     "decile": 1,
+     "n": 34,
+     "pred": 0.5453,
+     "observed": 0.5882
+    },
+    {
+     "decile": 2,
+     "n": 81,
+     "pred": 0.5664,
+     "observed": 0.642
+    },
+    {
+     "decile": 4,
+     "n": 57,
+     "pred": 0.5769,
+     "observed": 0.5439
+    },
+    {
+     "decile": 5,
+     "n": 67,
+     "pred": 0.5935,
+     "observed": 0.5522
+    },
+    {
+     "decile": 6,
+     "n": 72,
+     "pred": 0.6116,
+     "observed": 0.4861
+    },
+    {
+     "decile": 7,
+     "n": 51,
+     "pred": 0.6405,
+     "observed": 0.4706
+    },
+    {
+     "decile": 8,
+     "n": 39,
+     "pred": 0.7315,
+     "observed": 0.5897
+    }
+   ],
    "probability": null
   }
  },
