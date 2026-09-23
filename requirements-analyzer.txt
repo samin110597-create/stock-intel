@@ -1,0 +1,3 @@
+-r requirements.txt
+yfinance>=0.2.65,<2
+tzdata>=2025.1

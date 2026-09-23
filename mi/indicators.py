@@ -25,7 +25,10 @@ def rsi(s: pd.Series, n: int = 14) -> pd.Series:
     up = d.clip(lower=0).ewm(alpha=1 / n, adjust=False, min_periods=n).mean()
     dn = (-d.clip(upper=0)).ewm(alpha=1 / n, adjust=False, min_periods=n).mean()
     rs = up / dn.replace(0, np.nan)
-    return (100 - 100 / (1 + rs)).fillna(50.0)
+    result = 100 - 100 / (1 + rs)
+    # A run with gains and no losses is RSI 100, not neutral 50.
+    result = result.mask((dn == 0) & (up > 0), 100.0)
+    return result.fillna(50.0)
 
 
 def macd(s: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9) -> pd.DataFrame:
