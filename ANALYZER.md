@@ -4,6 +4,12 @@ Enter **ticker + current price**, then press **Analyze**. This is a local Window
 application with a five-session research outlook. It does not place orders.
 The existing dashboard (`app.py`) and GitHub Pages site remain separate.
 
+**Measured initial results:** [full comparison](reports/INITIAL_BACKTEST.md).
+The full ensemble had the highest simulated return among tested combinations
+for all three tickers, but lost money on NVDA and SPY and lagged buy-and-hold on
+all three. Direction accuracy did not improve consistently. Adding Laya alone
+worsened returns on every ticker. These findings do not qualify a trading model.
+
 ## Windows: first run
 
 1. Download this branch as a ZIP from GitHub and extract it, or open the existing
