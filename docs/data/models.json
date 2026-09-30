@@ -4,17 +4,17 @@
    "status": "NOT QUALIFIED",
    "horizon_days": 5,
    "reasons": [
-    "Brier skill -0.0267 < 0.005 (no better than predicting the base rate)",
+    "Brier skill -0.0272 < 0.005 (no better than predicting the base rate)",
     "skill positive in only 3/6 folds (unstable across time, likely one lucky regime)",
-    "permutation p=0.674 > 0.05 (skill indistinguishable from noise)"
+    "permutation p=0.691 > 0.05 (skill indistinguishable from noise)"
    ],
    "scorecard": {
-    "Out-of-sample rows": 475,
-    "Base rate": 0.6168,
-    "Brier score": 0.24985,
-    "Brier skill": -0.02675,
-    "Log loss": 0.69329,
-    "Permutation p-value": 0.6737,
+    "Out-of-sample rows": 476,
+    "Base rate": 0.6155,
+    "Brier score": 0.25004,
+    "Brier skill": -0.02723,
+    "Log loss": 0.69367,
+    "Permutation p-value": 0.6907,
     "Folds with positive skill": "3 of 6"
    },
    "fold_skill": [
@@ -23,7 +23,7 @@
     -0.1086,
     -0.0227,
     0.0023,
-    0.0079
+    0.0075
    ],
    "reliability": [
     {
@@ -42,10 +42,10 @@
     },
     {
      "bin": "0.5-0.6",
-     "n": 348,
-     "predicted": 0.5434,
-     "observed": 0.6264,
-     "gap": -0.083
+     "n": 349,
+     "predicted": 0.5435,
+     "observed": 0.6246,
+     "gap": -0.0811
     },
     {
      "bin": "0.6-0.7",
@@ -88,9 +88,9 @@
     },
     {
      "decile": 5,
-     "n": 76,
+     "n": 77,
      "pred": 0.5827,
-     "observed": 0.5526
+     "observed": 0.5455
     },
     {
      "decile": 6,
@@ -105,15 +105,15 @@
    "status": "NOT QUALIFIED",
    "horizon_days": 5,
    "reasons": [
-    "permutation p=0.064 > 0.05 (skill indistinguishable from noise)"
+    "permutation p=0.065 > 0.05 (skill indistinguishable from noise)"
    ],
    "scorecard": {
-    "Out-of-sample rows": 475,
-    "Base rate": 0.5474,
-    "Brier score": 0.24877,
-    "Brier skill": 0.00814,
-    "Log loss": 0.69088,
-    "Permutation p-value": 0.0645,
+    "Out-of-sample rows": 476,
+    "Base rate": 0.5462,
+    "Brier score": 0.24902,
+    "Brier skill": 0.00803,
+    "Log loss": 0.6914,
+    "Permutation p-value": 0.065,
     "Folds with positive skill": "5 of 6"
    },
    "fold_skill": [
@@ -122,7 +122,7 @@
     0.0297,
     0.0494,
     0.0201,
-    0.0103
+    0.0087
    ],
    "reliability": [
     {
@@ -148,10 +148,10 @@
     },
     {
      "bin": "0.6-0.7",
-     "n": 201,
-     "predicted": 0.6351,
-     "observed": 0.5423,
-     "gap": 0.0929
+     "n": 202,
+     "predicted": 0.635,
+     "observed": 0.5396,
+     "gap": 0.0954
     },
     {
      "bin": "0.7-0.8",
@@ -195,9 +195,9 @@
     },
     {
      "decile": 4,
-     "n": 41,
+     "n": 42,
      "pred": 0.6084,
-     "observed": 0.5366
+     "observed": 0.5238
     },
     {
      "decile": 5,
