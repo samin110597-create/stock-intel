@@ -1,0 +1,46 @@
+name: Analyzer backtest (artifact only)
+on:
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: 'Space-separated US tickers'
+        default: 'NVDA MU SPY'
+      models:
+        description: 'Models to test'
+        type: choice
+        options: ['linear', 'linear,chronos,laya']
+        default: 'linear'
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-analyzer.txt
+      - if: inputs.models == 'linear,chronos,laya'
+        run: pip install -r requirements-models.txt
+      - run: pytest tests -q
+      - name: Compare models
+        env:
+          TICKERS: ${{ inputs.tickers }}
+          MODELS: ${{ inputs.models }}
+          TWELVEDATA_KEY: ${{ secrets.TWELVEDATA_KEY }}
+          POLYGON_KEY: ${{ secrets.POLYGON_KEY }}
+          FMP_KEY: ${{ secrets.FMP_KEY }}
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
+          USE_TF: '0'
+          HF_HOME: data/models
+          OMP_NUM_THREADS: '2'
+        run: |
+          python -c "import os, subprocess; subprocess.run(['python', '-m', 'mi.analyzer.backtest', '--tickers', *os.environ['TICKERS'].split(), '--models', os.environ['MODELS']], check=True)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: analyzer-backtest
+          path: data/backtests/latest.json
