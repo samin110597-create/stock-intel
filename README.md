@@ -1,5 +1,11 @@
 # stock-intel
 
+**New on the analyzer branch:** [Laya Stock Analyzer](ANALYZER.md) — a local
+two-input prototype with automatic history, experimental model combinations,
+entry/stop/target references, and reproducible trading backtests. Double-click
+`Start Analyzer.cmd` on Windows. The documentation below describes the original
+dashboard and scheduled Pages pipeline.
+
 A market analysis site built around one principle: **the system is not allowed to show you a number it cannot defend.**
 
 **You never run Python.** A scheduled GitHub Action fetches the data, writes plain JSON into `docs/data/`, and commits it. GitHub Pages serves `docs/` as a static site. You add the repo, add your keys as secrets, turn on Pages, and visit the URL.
