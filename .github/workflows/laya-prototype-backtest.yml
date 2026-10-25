@@ -1,0 +1,195 @@
+name: laya-prototype-backtest
+
+on:
+  push:
+    branches: [laya-prototype-v1]
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install yfinance pandas numpy scikit-learn tabulate
+      - name: Run chronological out-of-sample backtest
+        run: |
+          python - <<'PY'
+          import math, json
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+          import yfinance as yf
+          from sklearn.linear_model import LogisticRegression
+          from sklearn.ensemble import HistGradientBoostingClassifier, ExtraTreesClassifier
+          from sklearn.metrics import brier_score_loss, roc_auc_score, accuracy_score
+
+          universe=["AAPL","MSFT","NVDA","AMD","META","AMZN","GOOGL","AVGO","MU","NFLX","VRT","AMBA","CIFR"]
+
+          def dl(t):
+              d=yf.download(t,period="10y",interval="1d",auto_adjust=True,progress=False,threads=False)
+              if isinstance(d.columns,pd.MultiIndex):
+                  if t in d.columns.get_level_values(-1):
+                      d=d.xs(t,axis=1,level=-1,drop_level=True)
+                  elif t in d.columns.get_level_values(0):
+                      d=d.xs(t,axis=1,level=0,drop_level=True)
+              d=d.rename(columns={c:str(c).title() for c in d.columns})
+              d=d[["Open","High","Low","Close","Volume"]].dropna().sort_index()
+              d.index=pd.to_datetime(d.index).tz_localize(None)
+              return d
+
+          def rsi(s,n=14):
+              z=s.diff(); up=z.clip(lower=0); dn=-z.clip(upper=0)
+              au=up.ewm(alpha=1/n,adjust=False,min_periods=n).mean()
+              ad=dn.ewm(alpha=1/n,adjust=False,min_periods=n).mean()
+              rs=au/ad.replace(0,np.nan)
+              return 100-100/(1+rs)
+
+          def atr(d,n=14):
+              pc=d.Close.shift(1)
+              tr=pd.concat([(d.High-d.Low).abs(),(d.High-pc).abs(),(d.Low-pc).abs()],axis=1).max(axis=1)
+              return tr.ewm(alpha=1/n,adjust=False,min_periods=n).mean()
+
+          def mkt(d,p):
+              c=d.Close.astype(float); rr=c.pct_change()
+              return pd.DataFrame({
+                  p+"_ret5":c.pct_change(5),
+                  p+"_ret20":c.pct_change(20),
+                  p+"_ema50_gap":c/c.ewm(span=50,adjust=False).mean()-1,
+                  p+"_vol20":rr.rolling(20).std()*math.sqrt(252),
+              },index=d.index)
+
+          def feats(d,spy,qqq):
+              c=d.Close.astype(float); h=d.High.astype(float); l=d.Low.astype(float); v=d.Volume.astype(float)
+              x=d.copy()
+              for n in [1,5,10,20]: x["ret"+str(n)]=c.pct_change(n)
+              e10=c.ewm(span=10,adjust=False).mean(); e20=c.ewm(span=20,adjust=False).mean(); e50=c.ewm(span=50,adjust=False).mean()
+              x["ema10_gap"]=c/e10-1; x["ema20_gap"]=c/e20-1; x["ema50_gap"]=c/e50-1
+              x["rsi14"]=rsi(c)
+              m=c.ewm(span=12,adjust=False).mean()-c.ewm(span=26,adjust=False).mean()
+              ms=m.ewm(span=9,adjust=False).mean()
+              a=atr(d); x["ATR14"]=a; x["atr_pct"]=a/c; x["macd_hist_atr"]=(m-ms)/a.replace(0,np.nan)
+              x["volume_ratio20"]=v/v.rolling(20).mean()
+              ph=h.shift(1).rolling(20).max(); pl=l.shift(1).rolling(20).min()
+              x["dist_high20"]=c/ph-1; x["dist_low20"]=c/pl-1
+              x["breakout20"]=(c>ph).astype(float); x["breakdown20"]=(c<pl).astype(float)
+              x["vol20"]=c.pct_change().rolling(20).std()*math.sqrt(252)
+              x["trend_strength"]=(e20/e50-1)/x["atr_pct"].replace(0,np.nan)
+              x=x.join(mkt(spy,"spy"),how="left").join(mkt(qqq,"qqq"),how="left")
+              return x.ffill()
+
+          def labels(x,H=20,tp=2.0,sl=1.25):
+              n=len(x); L=np.full(n,np.nan); S=np.full(n,np.nan)
+              c=x.Close.to_numpy(float); hi=x.High.to_numpy(float); lo=x.Low.to_numpy(float); a=x.ATR14.to_numpy(float)
+              for i in range(n-H):
+                  if not np.isfinite(a[i]) or a[i]<=0: continue
+                  ltp=c[i]+tp*a[i]; lsl=c[i]-sl*a[i]; stp=c[i]-tp*a[i]; ssl=c[i]+sl*a[i]
+                  ld=sd=False
+                  for j in range(i+1,i+H+1):
+                      if not ld:
+                          ht=hi[j]>=ltp; hs=lo[j]<=lsl
+                          if ht and hs: L[i]=0; ld=True
+                          elif hs: L[i]=0; ld=True
+                          elif ht: L[i]=1; ld=True
+                      if not sd:
+                          ht=lo[j]<=stp; hs=hi[j]>=ssl
+                          if ht and hs: S[i]=0; sd=True
+                          elif hs: S[i]=0; sd=True
+                          elif ht: S[i]=1; sd=True
+                      if ld and sd: break
+              x=x.copy(); x["long_win"]=L; x["short_win"]=S; return x
+
+          price_cols=["ret1","ret5","ret10","ret20","ema10_gap","ema20_gap","ema50_gap","rsi14","macd_hist_atr","atr_pct","volume_ratio20","dist_high20","dist_low20","vol20","trend_strength","breakout20","breakdown20"]
+          market_cols=["spy_ret5","spy_ret20","spy_ema50_gap","spy_vol20","qqq_ret5","qqq_ret20","qqq_ema50_gap","qqq_vol20"]
+          all_cols=price_cols+market_cols
+
+          def tscore(r,side):
+              if side=="long":
+                  vals=[r.ema20_gap>0,r.ema50_gap>0,r.ret20>0,r.macd_hist_atr>0,45<=r.rsi14<=72,r.volume_ratio20>=1,r.dist_high20>-0.06,r.spy_ret20>0,r.qqq_ret20>0]
+              else:
+                  vals=[r.ema20_gap<0,r.ema50_gap<0,r.ret20<0,r.macd_hist_atr<0,28<=r.rsi14<=55,r.volume_ratio20>=1,r.dist_low20<0.06,r.spy_ret20<0,r.qqq_ret20<0]
+              return float(np.mean(vals))
+
+          def train_predict(train,test,side):
+              lab=side+"_win"
+              tr=train.dropna(subset=all_cols+[lab]).copy(); te=test.dropna(subset=all_cols+[lab]).copy()
+              if len(tr)<180 or len(te)<20 or tr[lab].nunique()<2: return None
+              y=tr[lab].astype(int).to_numpy(); yt=te[lab].astype(int).to_numpy()
+              st=np.array([tscore(r,side) for _,r in tr.iterrows()]).reshape(-1,1)
+              ste=np.array([tscore(r,side) for _,r in te.iterrows()]).reshape(-1,1)
+              cal=LogisticRegression(max_iter=500,class_weight="balanced").fit(st,y)
+              ptech=cal.predict_proba(ste)[:,1]
+              Xp=tr[price_cols].replace([np.inf,-np.inf],np.nan).fillna(0); Xpe=te[price_cols].replace([np.inf,-np.inf],np.nan).fillna(0)
+              Xm=tr[all_cols].replace([np.inf,-np.inf],np.nan).fillna(0); Xme=te[all_cols].replace([np.inf,-np.inf],np.nan).fillna(0)
+              hp=HistGradientBoostingClassifier(learning_rate=.045,max_iter=220,max_leaf_nodes=15,l2_regularization=1,min_samples_leaf=24,random_state=42).fit(Xp,y)
+              hm=HistGradientBoostingClassifier(learning_rate=.045,max_iter=220,max_leaf_nodes=15,l2_regularization=1,min_samples_leaf=24,random_state=42).fit(Xm,y)
+              ex=ExtraTreesClassifier(n_estimators=220,min_samples_leaf=14,max_features="sqrt",class_weight="balanced",random_state=42,n_jobs=-1).fit(Xm,y)
+              pp=hp.predict_proba(Xpe)[:,1]; pm=hm.predict_proba(Xme)[:,1]; pe=ex.predict_proba(Xme)[:,1]
+              return pd.DataFrame({
+                  "y":yt,"side":side,
+                  "technical_only":ptech,
+                  "price_hgb":pp,
+                  "market_hgb":pm,
+                  "market_extra_trees":pe,
+                  "market_ensemble":.25*ptech+.45*pm+.30*pe,
+              })
+
+          spy=dl("SPY"); qqq=dl("QQQ")
+          out=[]; used=[]; skipped={}
+          for t in universe:
+              try:
+                  x=labels(feats(dl(t),spy,qqq)); x["ticker"]=t
+                  if len(x)<350: skipped[t]="short history"; continue
+                  cut=int(len(x)*.70); train=x.iloc[:max(0,cut-20)]; test=x.iloc[cut:]
+                  for side in ["long","short"]:
+                      p=train_predict(train,test,side)
+                      if p is not None:
+                          p["ticker"]=t; out.append(p)
+                  used.append(t)
+              except Exception as e:
+                  skipped[t]=str(e)
+          if not out: raise RuntimeError("No predictions produced: "+json.dumps(skipped))
+          P=pd.concat(out,ignore_index=True)
+          rows=[]
+          for col in ["technical_only","price_hgb","market_hgb","market_extra_trees","market_ensemble"]:
+              y=P.y.to_numpy(int); p=np.clip(P[col].to_numpy(float),1e-6,1-1e-6)
+              mask=p>=.65
+              rows.append({
+                  "variant":col,
+                  "samples":len(P),
+                  "brier":brier_score_loss(y,p),
+                  "roc_auc":roc_auc_score(y,p) if len(np.unique(y))>1 else np.nan,
+                  "accuracy_0.5":accuracy_score(y,p>=.5),
+                  "high_conf_signals":int(mask.sum()),
+                  "coverage":float(mask.mean()),
+                  "high_conf_win_rate":float(y[mask].mean()) if mask.sum() else np.nan,
+              })
+          R=pd.DataFrame(rows).sort_values(["brier","roc_auc"],ascending=[True,False])
+          elig=R[R.high_conf_signals>=80]
+          winner=(elig if len(elig) else R).iloc[0].to_dict()
+          Path("laya_backtest").mkdir(exist_ok=True)
+          R.to_csv("laya_backtest/summary.csv",index=False)
+          P.to_csv("laya_backtest/predictions.csv",index=False)
+          with open("laya_backtest/report.md","w",encoding="utf-8") as f:
+              f.write("# Laya Stock Analyzer - First Backtest\n\n")
+              f.write("Tickers used: "+", ".join(used)+"\n\n")
+              f.write("Outcome: within 20 trading days, +2 ATR target before -1.25 ATR stop; SHORT symmetric. Same-day target+stop counted as loss. Unresolved cases excluded.\n\n")
+              f.write("Validation: first 70% train, 20-bar embargo, final 30% out-of-sample.\n\n")
+              f.write(R.to_markdown(index=False,floatfmt=".4f"))
+              f.write("\n\n## First-pass winner\n\n")
+              f.write(json.dumps(winner,indent=2,default=str))
+              f.write("\n\nImportant: this ablation tests historical technical/ML components. Laya and Chronos are not credited with predictive edge until separately calibrated on stock outcomes.\n")
+          print(R.to_string(index=False))
+          print("WINNER",json.dumps(winner,default=str))
+          print("USED",used)
+          print("SKIPPED",skipped)
+          PY
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: laya-prototype-backtest
+          path: laya_backtest/
