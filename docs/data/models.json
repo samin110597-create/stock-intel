@@ -4,111 +4,118 @@
    "status": "NOT QUALIFIED",
    "horizon_days": 5,
    "reasons": [
-    "Brier skill -0.0539 < 0.005 (no better than predicting the base rate)",
-    "skill positive in only 2/6 folds (unstable across time, likely one lucky regime)",
-    "permutation p=0.994 > 0.05 (skill indistinguishable from noise)"
+    "Brier skill -0.0245 < 0.005 (no better than predicting the base rate)",
+    "skill positive in only 3/6 folds (unstable across time, likely one lucky regime)",
+    "permutation p=0.830 > 0.05 (skill indistinguishable from noise)"
    ],
    "scorecard": {
     "Out-of-sample rows": 477,
-    "Base rate": 0.608,
-    "Brier score": 0.25714,
-    "Brier skill": -0.05387,
-    "Log loss": 0.70823,
-    "Permutation p-value": 0.994,
-    "Folds with positive skill": "2 of 6"
+    "Base rate": 0.6101,
+    "Brier score": 0.24955,
+    "Brier skill": -0.02454,
+    "Log loss": 0.69222,
+    "Permutation p-value": 0.8301,
+    "Folds with positive skill": "3 of 6"
    },
    "fold_skill": [
-    -0.176,
-    0.0264,
-    -0.1198,
-    -0.0022,
-    0.0002,
-    -0.0117
+    -0.1001,
+    0.0503,
+    -0.1094,
+    -0.0001,
+    0.037,
+    0.0087
    ],
    "reliability": [
     {
+     "bin": "0.3-0.4",
+     "n": 13,
+     "predicted": 0.3733,
+     "observed": 0.9231,
+     "gap": -0.5497
+    },
+    {
      "bin": "0.4-0.5",
-     "n": 115,
-     "predicted": 0.4666,
-     "observed": 0.713,
-     "gap": -0.2465
+     "n": 71,
+     "predicted": 0.4821,
+     "observed": 0.5915,
+     "gap": -0.1095
     },
     {
      "bin": "0.5-0.6",
-     "n": 334,
-     "predicted": 0.555,
-     "observed": 0.5838,
-     "gap": -0.0288
+     "n": 337,
+     "predicted": 0.5562,
+     "observed": 0.6083,
+     "gap": -0.0521
     },
     {
      "bin": "0.6-0.7",
-     "n": 10,
-     "predicted": 0.6413,
-     "observed": 0.7,
-     "gap": -0.0587
+     "n": 41,
+     "predicted": 0.6284,
+     "observed": 0.4878,
+     "gap": 0.1406
     },
     {
      "bin": "0.7-0.8",
-     "n": 18,
-     "predicted": 0.7114,
-     "observed": 0.3333,
-     "gap": 0.378
+     "n": 15,
+     "predicted": 0.7163,
+     "observed": 0.8,
+     "gap": -0.0837
     }
    ],
    "deciles": [
     {
      "decile": 0,
-     "n": 50,
-     "pred": 0.4378,
-     "observed": 0.86
+     "n": 84,
+     "pred": 0.4653,
+     "observed": 0.6429
     },
     {
      "decile": 1,
-     "n": 57,
-     "pred": 0.4882,
-     "observed": 0.5614
+     "n": 19,
+     "pred": 0.5117,
+     "observed": 0.8421
     },
     {
      "decile": 2,
-     "n": 78,
-     "pred": 0.5208,
-     "observed": 0.6538
+     "n": 48,
+     "pred": 0.5297,
+     "observed": 0.6458
     },
     {
      "decile": 3,
-     "n": 8,
-     "pred": 0.5367,
-     "observed": 0.25
+     "n": 100,
+     "pred": 0.5428,
+     "observed": 0.64
     },
     {
      "decile": 4,
-     "n": 80,
-     "pred": 0.5404,
-     "observed": 0.65
+     "n": 75,
+     "pred": 0.5687,
+     "observed": 0.64
     },
     {
      "decile": 5,
-     "n": 15,
-     "pred": 0.5618,
-     "observed": 0.4
+     "n": 13,
+     "pred": 0.5798,
+     "observed": 0.4615
     },
     {
      "decile": 6,
-     "n": 79,
-     "pred": 0.5704,
-     "observed": 0.6835
+     "n": 80,
+     "pred": 0.5832,
+     "observed": 0.4875
     },
     {
      "decile": 7,
-     "n": 82,
-     "pred": 0.5814,
-     "observed": 0.4512
+     "n": 27,
+     "pred": 0.6114,
+     "observed": 0.3333
     },
     {
      "decile": 8,
-     "n": 28,
-     "pred": 0.6863,
-     "observed": 0.4643
+     "n": 31,
+     "pred": 0.683,
+     "observed": 0.7742
     }
    ],
    "probability": null
@@ -117,131 +124,131 @@
    "status": "NOT QUALIFIED",
    "horizon_days": 5,
    "reasons": [
-    "Brier skill -0.0164 < 0.005 (no better than predicting the base rate)",
-    "skill positive in only 2/6 folds (unstable across time, likely one lucky regime)",
-    "permutation p=0.286 > 0.05 (skill indistinguishable from noise)"
+    "Brier skill -0.0295 < 0.005 (no better than predicting the base rate)",
+    "skill positive in only 3/6 folds (unstable across time, likely one lucky regime)",
+    "permutation p=0.705 > 0.05 (skill indistinguishable from noise)"
    ],
    "scorecard": {
     "Out-of-sample rows": 477,
     "Base rate": 0.5493,
-    "Brier score": 0.2542,
-    "Brier skill": -0.01637,
-    "Log loss": 0.70267,
-    "Permutation p-value": 0.2864,
-    "Folds with positive skill": "2 of 6"
+    "Brier score": 0.25768,
+    "Brier skill": -0.02948,
+    "Log loss": 0.71068,
+    "Permutation p-value": 0.7046,
+    "Folds with positive skill": "3 of 6"
    },
    "fold_skill": [
-    -0.0214,
-    -0.0182,
-    0.0408,
-    -0.0113,
-    -0.0533,
-    0.0419
+    0.009,
+    -0.0079,
+    0.0114,
+    -0.0081,
+    -0.1132,
+    0.0099
    ],
    "reliability": [
     {
      "bin": "0.3-0.4",
-     "n": 4,
-     "predicted": 0.3718,
+     "n": 3,
+     "predicted": 0.3571,
      "observed": 1.0,
-     "gap": -0.6282
+     "gap": -0.6429
     },
     {
      "bin": "0.4-0.5",
-     "n": 11,
-     "predicted": 0.419,
-     "observed": 0.2727,
-     "gap": 0.1463
+     "n": 32,
+     "predicted": 0.4286,
+     "observed": 0.4375,
+     "gap": -0.0089
     },
     {
      "bin": "0.5-0.6",
-     "n": 189,
-     "predicted": 0.5726,
-     "observed": 0.619,
-     "gap": -0.0464
+     "n": 191,
+     "predicted": 0.5796,
+     "observed": 0.6283,
+     "gap": -0.0486
     },
     {
      "bin": "0.6-0.7",
-     "n": 200,
-     "predicted": 0.628,
-     "observed": 0.45,
-     "gap": 0.178
+     "n": 205,
+     "predicted": 0.6277,
+     "observed": 0.4878,
+     "gap": 0.1399
     },
     {
      "bin": "0.7-0.8",
-     "n": 69,
-     "predicted": 0.741,
-     "observed": 0.6522,
-     "gap": 0.0888
+     "n": 38,
+     "predicted": 0.7444,
+     "observed": 0.5263,
+     "gap": 0.218
     },
     {
      "bin": "0.8-0.9",
-     "n": 4,
-     "predicted": 0.8426,
-     "observed": 0.75,
-     "gap": 0.0926
+     "n": 8,
+     "predicted": 0.8143,
+     "observed": 0.625,
+     "gap": 0.1893
     }
    ],
    "deciles": [
     {
      "decile": 0,
-     "n": 53,
-     "pred": 0.4971,
-     "observed": 0.4528
+     "n": 48,
+     "pred": 0.455,
+     "observed": 0.5
     },
     {
      "decile": 1,
-     "n": 68,
-     "pred": 0.577,
-     "observed": 0.7794
+     "n": 73,
+     "pred": 0.5756,
+     "observed": 0.5479
     },
     {
      "decile": 2,
-     "n": 46,
-     "pred": 0.5853,
-     "observed": 0.4565
+     "n": 31,
+     "pred": 0.5838,
+     "observed": 0.8065
     },
     {
      "decile": 3,
-     "n": 37,
-     "pred": 0.5898,
-     "observed": 0.7027
+     "n": 47,
+     "pred": 0.5858,
+     "observed": 0.7234
     },
     {
      "decile": 4,
-     "n": 47,
-     "pred": 0.6132,
-     "observed": 0.4255
+     "n": 49,
+     "pred": 0.6031,
+     "observed": 0.5714
     },
     {
      "decile": 5,
-     "n": 37,
-     "pred": 0.6167,
-     "observed": 0.5946
+     "n": 43,
+     "pred": 0.6192,
+     "observed": 0.6279
     },
     {
      "decile": 6,
-     "n": 72,
-     "pred": 0.6221,
-     "observed": 0.4167
+     "n": 64,
+     "pred": 0.6248,
+     "observed": 0.4375
     },
     {
      "decile": 7,
-     "n": 30,
-     "pred": 0.6596,
-     "observed": 0.4667
+     "n": 48,
+     "pred": 0.6268,
+     "observed": 0.375
     },
     {
      "decile": 8,
-     "n": 39,
-     "pred": 0.7014,
-     "observed": 0.5385
+     "n": 26,
+     "pred": 0.6559,
+     "observed": 0.5
     },
     {
      "decile": 9,
      "n": 48,
-     "pred": 0.7608,
-     "observed": 0.6458
+     "pred": 0.7541,
+     "observed": 0.5208
     }
    ],
    "probability": null
